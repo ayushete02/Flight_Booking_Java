@@ -18,8 +18,8 @@ public class DomesticFlight extends JFrame
 	{
 		Container c =getContentPane();
 		c.setLayout(new BorderLayout());
-		String[] sItem1={"Trivandrum"};
-		String[] sItem2 ={ "Nagpur", "Chennai ", "Delhi", "Goa", "Hyderabad", "Kolkata", "Lucknow", "Mumbai", "Vishakapatnam" };
+		String[] sItem1={"Nagpur"};
+		String[] sItem2 ={ "Pune","Chennai", "Delhi","Goa","Hyderabad","Kolkata", "Lucknow", "Mumbai", "Vishakapatnam" };
 		String[] sItem3={"Economic","Business"};
 
 		this.type1 = type1;
