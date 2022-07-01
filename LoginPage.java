@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.text.*;
-
 public class LoginPage extends JFrame
 {
 	Container c = getContentPane();
@@ -45,10 +43,10 @@ public class LoginPage extends JFrame
 	JScrollPane JSP3 = new JScrollPane(TDomesticFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-	Icon img1 = new ImageIcon("img/economic.jpg");
-	Icon img2 = new ImageIcon("img/business.jpg");
-	Icon img3 = new ImageIcon("img/economic1.jpg");
-	Icon img4 = new ImageIcon("img/business1.jpg");
+	Icon img1 = new ImageIcon("ig/economic.jpg");
+	Icon img2 = new ImageIcon("ig/business.jpg");
+	Icon img3 = new ImageIcon("ig/economic1.jpg");
+	Icon img4 = new ImageIcon("ig/business1.jpg");
 
 	JLabel LEconomic = new JLabel("Economic", img1, SwingConstants.LEFT);
 	JLabel LBusiness = new JLabel("Business", img2, SwingConstants.LEFT);
@@ -105,10 +103,18 @@ public class LoginPage extends JFrame
 		JSP3.setVisible(false);
 		JSP4.setVisible(false);
 
-		LBusiness.setBounds(265, 170, 300, 125);
-		LEconomic.setBounds(0, 170, 250, 125);
-		LBusiness1.setBounds(280, 200, 135, 60);
-		LEconomic1.setBounds(50, 200, 147, 60);
+		LBusiness.setBounds(60, 130, 300, 125);
+		LEconomic.setBounds( 60, 170, 250, 125);
+		LBusiness1.setBounds(60, 130, 300, 125);
+		LEconomic1.setBounds(60, 170, 250, 125);
+
+
+		// LBusiness.setBounds(265, 170, 300, 125);
+		// LEconomic.setBounds(0, 170, 250, 125);
+		// LBusiness1.setBounds(280, 200, 135, 60);
+		// LEconomic1.setBounds(50, 200, 147, 60);
+
+		
 
 		PFlightTypes.add(LEconomic);
 		PFlightTypes.add(LBusiness);
