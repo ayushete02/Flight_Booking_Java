@@ -18,7 +18,7 @@ public class InternationalFlight extends JFrame
 	{
 		Container c =getContentPane();
 		c.setLayout(new BorderLayout());
-		String[] sItem1={"Nagpur"};
+		String[] sItem1={"Nagpur","Mumbai","Delhi","Kolkata"};
 		String[] sItem2={"Bali","Bangkok","Cairo","CapeTown","Chicago","Dubai","Frankfurt","HongKong","Istanbul","London","LosAngeles","Melbourne","New York","Paris","Rome","SanFrancisco","shanghai","Singapore","Sydney","Toronto"};
 		String[] sItem3={"Economic","Business"};
 
@@ -99,9 +99,8 @@ public class InternationalFlight extends JFrame
 		String[] item6={"0","1","2","3"};
 		CBInfant = new JComboBox(item6);
 
-		img2 = new ImageIcon("note_bg.gif");
 		LImg2 = new JLabel(img2);
-		LNotes = new JLabel("<html><body><p>NOTE: Bookings with International Credit Cards <p> have temporarily been suspended.This Service<p> will resume shortly and we will have a notice<p> posted on our website.We regret any <p>inconvenience caused to our passengers.</body></html>");
+		LNotes = new JLabel("<html><body><p></body></html>");
 
 		LPassengerDetails.setBounds(40,3,100,20);
 
