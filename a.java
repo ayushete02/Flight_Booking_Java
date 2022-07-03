@@ -1,7 +1,4 @@
-import javax.accessibility.Accessible;
 import javax.swing.*;
-import javax.swing.event.ListDataListener;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -17,16 +14,19 @@ public class DomesticFlight extends JFrame
 
 	LoginPage type1;
 
+	/**
+	 * @param type1
+	 */
 	public DomesticFlight(LoginPage type1)
 	{
 		Container c =getContentPane();
 		c.setLayout(new BorderLayout());
-		String[] sItem1={"Trivandrum"};
-		String[] sItem2 ={ "Bangalore", "Chennai ", "Delhi", "Goa", "Hyderabad", "Kolkata", "Lucknow", "Mumbai", "Vishakapatnam" };
+		String[] sItem1={"Nagpur"};
+		String[] sItem2 ={ "Pune","Chennai", "Delhi","Goa","Hyderabad","Kolkata", "Lucknow", "Mumbai", "Vishakapatnam" };
 		String[] sItem3={"Economic","Business"};
 
 		this.type1 = type1;
-		PPanel1 = new JPanel(null);
+		PPanel1 = new JPanel(null); 
 		PPanel1.setPreferredSize(new Dimension(500,200));
 
 		LBookingDetails = new JLabel("<html><b><font color=\"#C71585\">Booking Details</font></b></html>");
@@ -102,9 +102,9 @@ public class DomesticFlight extends JFrame
 		String[] item6={"0","1","2","3"};
 		CBInfant = new JComboBox(item6);
 
-		img2 = new ImageIcon("note_bg.gif");
+		// img2 = new ImageIcon("note_bg.gif");
 		LImg2 = new JLabel(img2);
-		LNotes = new JLabel("<html><body><p>NOTE: Bookings with International Credit Cards <p> have temporarily been suspended.This Service<p> will resume shortly and we will have a notice<p> posted on our website.We regret any <p>inconvenience caused to our passengers.</body></html>");
+		LNotes = new JLabel("<html><body><p> </body></html>");
 
 		LPassengerDetails.setBounds(40,3,100,20);
 
@@ -176,7 +176,9 @@ class button3 implements ActionListener
 		{
 			try{
 				while(i<20)
-				{
+				{	
+					System.out.println(type1.row1[i][1]);
+					System.out.println(sTo);
 					if(type1.row1[i][1].equals(sTo))
 					{
 						iPrice = Integer.parseInt((String)type1.row1[i][2]);
@@ -187,6 +189,7 @@ class button3 implements ActionListener
 				}
 			}catch(Exception e1)
 			{
+				System.out.println(e1);
 				JOptionPane.showMessageDialog(null, "You have no rights to access");
 				System.exit(0);
 			}
