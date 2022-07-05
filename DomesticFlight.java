@@ -1,7 +1,4 @@
-import javax.accessibility.Accessible;
 import javax.swing.*;
-import javax.swing.event.ListDataListener;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -274,15 +271,16 @@ class button3 implements ActionListener
 			{
 //write into data
 				Save2 save2=new Save2(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
-				ObjectOutputStream OOS1 = new ObjectOutputStream(new FileOutputStream("save2"));
-				for(i=0;i<iCount;i++)
-				{
-					Save2 temp1=new Save2(sTempFrom[i], sTempTo[i], sTempClass[i], iTempAdult[i], iTempChildren[i], iTempInfant[i], sTempBookingDate[i], iTempPrice[i], sTempTime[i]);
-					OOS1.writeObject(temp1);
+				try (ObjectOutputStream OOS1 = new ObjectOutputStream(new FileOutputStream("save2"))) {
+					for(i=0;i<iCount;i++)
+					{
+						Save2 temp1=new Save2(sTempFrom[i], sTempTo[i], sTempClass[i], iTempAdult[i], iTempChildren[i], iTempInfant[i], sTempBookingDate[i], iTempPrice[i], sTempTime[i]);
+						OOS1.writeObject(temp1);
 System.out.println(temp1);
+					}
+					OOS1.writeObject(save2);
+					OOS1.close();
 				}
-				OOS1.writeObject(save2);
-				OOS1.close();
 			}catch(Exception e1)
 			{
 				System.out.println(e1);
