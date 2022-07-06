@@ -6,7 +6,8 @@ import java.io.*;
 public class DomesticFlight extends JFrame
 {
 	JComboBox CBFrom, CBTo, CBClass, CBAdult, CBChildren, CBInfant;
-	JLabel LFrom, LTo, LBookingDate, LClass, LAdult, LChildren, LInfant, LBookingDetails, LPassengerDetails, LDate, LImg1, LImg2, LNotes;
+	JLabel LFrom, LTo, LBookingDate, LClass, LAdult,LChildren, LInfant, LBookingDetails, LPassengerDetails, LDate, LImg1, LImg2, LNotes;
+	JTextField BPName;
 	JTextField TFBookingDate;
 	Icon img1, img2;
 	JButton BFindFlight;
@@ -18,13 +19,13 @@ public class DomesticFlight extends JFrame
 	{
 		Container c =getContentPane();
 		c.setLayout(new BorderLayout());
-		String[] sItem1={"Trivandrum"};
+		String[] sItem1={"Nagpur"};
 		String[] sItem2 ={ "Bangalore", "Chennai ", "Delhi", "Goa", "Hyderabad", "Kolkata", "Lucknow", "Mumbai", "Vishakapatnam" };
 		String[] sItem3={"Economic","Business"};
 
 		this.type1 = type1;
 		PPanel1 = new JPanel(null);
-		PPanel1.setPreferredSize(new Dimension(500,200));
+		PPanel1.setPreferredSize(new Dimension(470,200));
 
 		LBookingDetails = new JLabel("<html><b><font color=\"#C71585\">Booking Details</font></b></html>");
 		LFrom = new JLabel("From          :");
@@ -40,7 +41,7 @@ public class DomesticFlight extends JFrame
 		LDate = new JLabel("(DD/MM/YYYY)");
 		LDate.setForeground(Color.red);
 
-		img1=new ImageIcon("map1.jpg");
+		img1=new ImageIcon("map1.jg");
 		LImg1 = new JLabel(img1);
 
 		BFindFlight = new JButton("Find Flight");
@@ -60,7 +61,7 @@ public class DomesticFlight extends JFrame
 		LClass.setBounds(20,220,100,20);
 		CBClass.setBounds(100,220,100,20);
 
-		BFindFlight.setBounds(50,270,100,25);
+		BFindFlight.setBounds(320,330,100,25);
 
 		LImg1.setBounds(0,290,495,260);
 
@@ -85,6 +86,11 @@ public class DomesticFlight extends JFrame
 
 		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">PassengerDetails</font></b></html>");
 
+		JLabel PName = new JLabel("Name ");
+		BPName = new JTextField(10);
+
+
+		
 		LAdult = new JLabel("Adults(12+)");
 
 		LChildren = new JLabel("Children(2-11)");
@@ -99,24 +105,29 @@ public class DomesticFlight extends JFrame
 		String[] item6={"0","1","2","3"};
 		CBInfant = new JComboBox(item6);
 
-		img2 = new ImageIcon("note_bg.gif");
+		img2 = new ImageIcon("note_bg.gi");
 		LImg2 = new JLabel(img2);
-		LNotes = new JLabel("<html><body><p>NOTE: Bookings with International Credit Cards <p> have temporarily been suspended.This Service<p> will resume shortly and we will have a notice<p> posted on our website.We regret any <p>inconvenience caused to our passengers.</body></html>");
+		LNotes = new JLabel("<html><body></body></html>");
 
 		LPassengerDetails.setBounds(40,3,100,20);
 
-		LAdult.setBounds(40,40,100,20);
-		CBAdult.setBounds(140,40,100,20);
+		PName.setBounds(40,40,100,20);
+		BPName.setBounds(140,40,100,20);
 
-		LChildren.setBounds(40,105,100,20);
-		CBChildren.setBounds(140,105,100,20);
+		LAdult.setBounds(40,105,100,20);
+		CBAdult.setBounds(140,105,100,20);
 
-		LInfant.setBounds(40,170,100,20);
-		CBInfant.setBounds(140,170,100,20);
+		LChildren.setBounds(40,170,100,20);
+		CBChildren.setBounds(140,170,100,20);
 
-		LImg2.setBounds(16,220,320,200);
-		LNotes.setBounds(55,240,380,180);
+		LInfant.setBounds(40,220,100,20);
+		CBInfant.setBounds(140,220,100,20);
 
+		LImg2.setBounds(16,280,320,200);
+		LNotes.setBounds(55,280,380,180);
+
+		PPanel2.add(PName);
+		PPanel2.add(BPName);
 		PPanel2.add(LPassengerDetails);
 		PPanel2.add(LAdult);
 		PPanel2.add(LChildren);
@@ -271,7 +282,9 @@ class button3 implements ActionListener
 			{
 //write into data
 				Save2 save2=new Save2(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
+				// try (ObjectOutputStream OOS1 = new ObjectOutputStream(new FileOutputStream("save2"))) {
 				try (ObjectOutputStream OOS1 = new ObjectOutputStream(new FileOutputStream("save2"))) {
+
 					for(i=0;i<iCount;i++)
 					{
 						Save2 temp1=new Save2(sTempFrom[i], sTempTo[i], sTempClass[i], iTempAdult[i], iTempChildren[i], iTempInfant[i], sTempBookingDate[i], iTempPrice[i], sTempTime[i]);

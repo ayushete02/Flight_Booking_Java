@@ -8,6 +8,7 @@ public class InternationalFlight extends JFrame
 	JComboBox CBFrom, CBTo, CBClass, CBAdult, CBChildren, CBInfant;
 	JLabel LFrom, LTo, LBookingDate, LClass, LAdult, LChildren, LInfant, LBookingDetails, LPassengerDetails, LDate, LImg1, LImg2, LNotes;
 	JTextField TFBookingDate;
+	JTextField BPName;
 	Icon img1, img2;
 	JButton BFindFlight;
 	JPanel PPanel1, PPanel2;
@@ -40,7 +41,7 @@ public class InternationalFlight extends JFrame
 		LDate = new JLabel("(DD/MM/YYYY)");
 		LDate.setForeground(Color.red);
 
-		img1=new ImageIcon("map1.jpg");
+		img1=new ImageIcon("map1.jg");
 		LImg1 = new JLabel(img1);
 
 		BFindFlight = new JButton("Find Flight");
@@ -60,7 +61,8 @@ public class InternationalFlight extends JFrame
 		LClass.setBounds(20,220,100,20);
 		CBClass.setBounds(100,220,100,20);
 
-		BFindFlight.setBounds(50,270,100,25);
+		BFindFlight.setBounds(320,330,100,25);
+
 
 		LImg1.setBounds(0,290,495,260);
 
@@ -85,6 +87,11 @@ public class InternationalFlight extends JFrame
 
 		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">PassengerDetails</font></b></html>");
 
+		
+		JLabel PName = new JLabel("Name ");
+		BPName = new JTextField(10);
+
+
 		LAdult = new JLabel("Adults(12+)");
 
 		LChildren = new JLabel("Children(2-11)");
@@ -104,17 +111,24 @@ public class InternationalFlight extends JFrame
 
 		LPassengerDetails.setBounds(40,3,100,20);
 
-		LAdult.setBounds(40,40,100,20);
-		CBAdult.setBounds(140,40,100,20);
 
-		LChildren.setBounds(40,105,100,20);
-		CBChildren.setBounds(140,105,100,20);
+		PName.setBounds(40,40,100,20);
+		BPName.setBounds(140,40,100,20);
 
-		LInfant.setBounds(40,170,100,20);
-		CBInfant.setBounds(140,170,100,20);
+		LAdult.setBounds(40,105,100,20);
+		CBAdult.setBounds(140,105,100,20);
 
-		LImg2.setBounds(16,220,320,200);
-		LNotes.setBounds(55,240,380,180);
+		LChildren.setBounds(40,170,100,20);
+		CBChildren.setBounds(140,170,100,20);
+
+		LInfant.setBounds(40,220,100,20);
+		CBInfant.setBounds(140,220,100,20);
+
+		LImg2.setBounds(16,280,320,200);
+		LNotes.setBounds(55,280,380,180);
+
+		PPanel2.add(PName);
+		PPanel2.add(BPName);
 
 		PPanel2.add(LPassengerDetails);
 		PPanel2.add(LAdult);

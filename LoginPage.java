@@ -78,16 +78,7 @@ public class LoginPage extends JFrame {
 			{ "Nagpur", "Sanghai", "73290", "10:15" }, { "Nagpur", "Singapore", "27000", "21:10" },
 			{ "Nagpur", "Sydney", "83400", "12:00" }, { "Nagpur", "Toronto", "105000", "17:00" } };
 
-	final Object[][] row5 = { { "Nagpur", "Bali", "64455", "06:20" }, { "Nagpur", "Bangkok", "27000", "20:45" },
-			{ "Nagpur", "Cairo", "68925", "10:25" }, { "Nagpur", "CapeTown", "37500", "16:45" },
-			{ "Nagpur", "Chicago", "105000", "06:30" }, { "Nagpur", "Dubai", "36000", "08:15" },
-			{ "Nagpur", "Frankfurt", "55500", "06:50" }, { "Nagpur", "HongKong", "62535", "12:00" },
-			{ "Nagpur", "Istanbul", "66000", "10:45" }, { "Nagpur", "London", "67800", "14:35" },
-			{ "Nagpur", "LosAngeles", "105000", "22:00" }, { "Nagpur", "Melbourne", "83400", "21:15" },
-			{ "Nagpur", "New York", "96000", "08:50" }, { "Nagpur", "Paris", "55500", "18:45" },
-			{ "Nagpur", "Rome", "59700", "20:00" }, { "Nagpur", "SanFrancisco", "105000", "12:00" },
-			{ "Nagpur", "Sanghai", "73290", "10:15" }, { "Nagpur", "Singapore", "27000", "21:10" },
-			{ "Nagpur", "Sydney", "83400", "12:00" }, { "Nagpur", "Toronto", "105000", "17:00" } };
+	final Object[][] row5 = { { "Nagpur", "Bali", "64455", "06:20" }};
 
 	JTable TDomesticFlight = new JTable(row1, col1);
 	JTable TInternationalFlight = new JTable(row2, col2);
@@ -111,7 +102,7 @@ public class LoginPage extends JFrame {
 	Icon img3 = new ImageIcon("ig/economic1.jpg");
 	Icon img4 = new ImageIcon("ig/business1.jpg");
 
-	JLabel appname = new JLabel("<html><B style='color:gray; font-size:25px;'>LUDO ki FLIGHT</B></html>", img1,
+	JLabel appname = new JLabel("<html><B style='color:gray; font-size:25px;'>Airline Ticket Booking</B></html>", img1,
 			SwingConstants.LEFT);
 
 	JLabel LEconomic = new JLabel("<html><B  style='color:red;'>| &nbsp; Economic</B></html>", img1,
@@ -135,7 +126,7 @@ public class LoginPage extends JFrame {
 		OIS1.close();
 		
 	} catch (Exception e) {
-		//TODO: handle exception
+		System.out.println(e);
 	}
 	
 }

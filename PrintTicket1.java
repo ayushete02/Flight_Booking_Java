@@ -26,15 +26,15 @@ public class PrintTicket1 extends JFrame
 		JLabel LWishes = new JLabel("<html><body><I><font color=\"#D2B48C\">Wish you a happy journy</font></I></body></html>");
 
 
-		JLabel LTicketNo=new JLabel("<html><font color=\"#000000\">TicketNumber &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font></html>");
-		JLabel LBookedBy=new JLabel("<html><font color=\"#000000\">BookedBy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;</font></html>");
+		JLabel LTicketNo=new JLabel("<html><font color=\"#000000\">TicketNumber &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;"+(int)(Math.random()*(999999999-100000000+1)+10000000) +"</font></html>");
+		JLabel LBookedBy=new JLabel("<html><font color=\"#000000\">BookedBy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; Passenger 1</font></html>");
 
 		JLabel LEmpty = new JLabel("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-		JLabel LDemo = new JLabel("<html><U><font color=\"#8FBC8F\">AirLine-Project Developed By</font></U></html>");
-		JLabel LFranklin=new JLabel("<html><I><font color=\"#8FBC8F\">R Franklin Bourgia Singh</font></I></html>");
-		JLabel LRavi=new JLabel("<html><I><font color=\"#8FBC8F\">V.R Ravi Sankar</font></I></html>");
-		JLabel LMayuran=new JLabel("<html><I><font color=\"#8FBC8F\">B Mayuran</font></I></html>");
-		JLabel LSathya=new JLabel("<html><I><font color=\"#8FBC8F\">Sathyaraj</font></I></html>");
+		JLabel LDemo = new JLabel("<html><U><font color=\"#8FBC8F\">AirLine-Booking-Project Developed By</font></U></html>");
+		JLabel Ayush=new JLabel("<html><I><font color=\"#8FBC8F\">Ayush Shete</font></I></html>");
+		JLabel Karam=new JLabel("<html><I><font color=\"#8FBC8F\">Karan Agrawal</font></I></html>");
+		JLabel Vinni=new JLabel("<html><I><font color=\"#8FBC8F\">Vinni Fengade</font></I></html>");
+		JLabel Faysal=new JLabel("<html><I><font color=\"#8FBC8F\">Faysal Khan</font></I></html>");
 
 
 		LTitle.setBounds(170,15,500,45);
@@ -58,10 +58,10 @@ public class PrintTicket1 extends JFrame
 		LEmpty.setBounds(3,445,1000,20);
 
 		LDemo.setBounds(280,465,300,20);
-		LFranklin.setBounds(285,485,300,20);
-		LRavi.setBounds(285,505,300,20);
-		LMayuran.setBounds(285,525,300,20);
-		LSathya.setBounds(285,545,300,20);
+		Ayush.setBounds(285,485,300,20);
+		Karam.setBounds(285,505,300,20);
+		Vinni.setBounds(285,525,300,20);
+		Faysal.setBounds(285,545,300,20);
 
 
 		Panel2.add(LTitle);
