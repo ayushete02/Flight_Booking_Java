@@ -27,12 +27,12 @@ public class PrintTicket1 extends JFrame
 
 
 		JLabel LTicketNo=new JLabel("<html><font color=\"#000000\">TicketNumber &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;"+(int)(Math.random()*(999999999-100000000+1)+10000000) +"</font></html>");
-		JLabel LBookedBy=new JLabel("<html><font color=\"#000000\">BookedBy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; Passenger 1</font></html>");
+		JLabel LBookedBy=new JLabel("<html><font color=\"#000000\">BookedBy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; Passenger 1</font></html>");
 
 		JLabel LEmpty = new JLabel("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		JLabel LDemo = new JLabel("<html><U><font color=\"#8FBC8F\">AirLine-Booking-Project Developed By</font></U></html>");
 		JLabel Ayush=new JLabel("<html><I><font color=\"#8FBC8F\">Ayush Shete</font></I></html>");
-		JLabel Karam=new JLabel("<html><I><font color=\"#8FBC8F\">Karan Agrawal</font></I></html>");
+		JLabel Karan=new JLabel("<html><I><font color=\"#8FBC8F\">Karan Agrawal</font></I></html>");
 		JLabel Vinni=new JLabel("<html><I><font color=\"#8FBC8F\">Vinni Fengade</font></I></html>");
 		JLabel Faysal=new JLabel("<html><I><font color=\"#8FBC8F\">Faysal Khan</font></I></html>");
 
@@ -59,7 +59,7 @@ public class PrintTicket1 extends JFrame
 
 		LDemo.setBounds(280,465,300,20);
 		Ayush.setBounds(285,485,300,20);
-		Karam.setBounds(285,505,300,20);
+		Karan.setBounds(285,505,300,20);
 		Vinni.setBounds(285,525,300,20);
 		Faysal.setBounds(285,545,300,20);
 
@@ -84,10 +84,10 @@ public class PrintTicket1 extends JFrame
 		Panel2.add(LDemo);
 
 
-		// Panel2.add(Yugesh Verma);
-		// Panel2.add(gopi pal);
-		// Panel2.add(neeraj);
-		// Panel2.add(sunil);
+		Panel2.add(Ayush);
+		Panel2.add(Karan);
+		Panel2.add(Vinni);
+		Panel2.add(Faysal);
 
 
 		Panel2.setBackground(Color.white);

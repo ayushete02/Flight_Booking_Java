@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.EOFException;
 import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 
 import javax.swing.JFrame;
@@ -9,8 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.Border;
-
-
 
 public class LoginPage extends JFrame {
 	Container c = getContentPane();
@@ -46,6 +47,7 @@ public class LoginPage extends JFrame {
 	final Object[] col2 = { "From", "To", "Price", "Time" };
 	final Object[] col3 = { "From", "To", "Price", "Time" };
 	final Object[] col4 = { "From", "To", "Price", "Time" };
+	final Object[] col5 = { "Arrival", "Destination", "Class", "Time","Adult","Childrens","Infants","Fare" };
 
 	final Object[][] row1 = { { "Nagpur", "Bangalore", "3125", "16:30" }, { "Nagpur", "Chennai ", "3225", "19:00" },
 			{ "Nagpur", "Delhi", "1425 ", "08:30" }, { "Nagpur", "Goa", "1025 ", "09:50" },
@@ -78,13 +80,29 @@ public class LoginPage extends JFrame {
 			{ "Nagpur", "Sanghai", "73290", "10:15" }, { "Nagpur", "Singapore", "27000", "21:10" },
 			{ "Nagpur", "Sydney", "83400", "12:00" }, { "Nagpur", "Toronto", "105000", "17:00" } };
 
-	final Object[][] row5 = { { "Nagpur", "Bali", "64455", "06:20" }};
+	// try {
+	// 	Save1 save1;
+	// 	ObjectInputStream OIS1 = new ObjectInputStream(new FileInputStream("save1"));
+	// 	do {
+	// 		save1 = (Save1) OIS1.readObject();
+
+	// 		System.out.println(save1);
+
+	// 	} while (save1 != null);
+	// 	OIS1.close();
+
+	// }
+	// catch (Exception e) {
+	// 	System.out.println(e);
+	// }
+
+	final Object[][] row5 = { { "Nagpur", "Bali", "64455", "06:20", "Bali", "64455", "06:20", "Bali", "64455"} };
 
 	JTable TDomesticFlight = new JTable(row1, col1);
 	JTable TInternationalFlight = new JTable(row2, col2);
 	JTable TDomesticFlight1 = new JTable(row3, col3);
 	JTable TInternationalFlight1 = new JTable(row4, col2);
-	JTable history = new JTable(row4, col2);
+	JTable history = new JTable(row5, col5);
 
 	JScrollPane JSP1 = new JScrollPane(TDomesticFlight, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
 			ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -111,33 +129,45 @@ public class LoginPage extends JFrame {
 	JLabel LEconomic1 = new JLabel("<html><B>| &nbsp; Economic</B></html>", img3, SwingConstants.LEFT);
 	JLabel LBusiness1 = new JLabel("<html><B>Business&nbsp;</B></html>", img4, SwingConstants.LEFT);
 
-	public void setData(){
-	try {
-		Save1 save1;
-		ObjectInputStream OIS1 = new ObjectInputStream(new FileInputStream("save1"));
-		do
-		{
-			save1 = (Save1)OIS1.readObject();
-			
-			System.out.println(save1);
-	
-		
-		}while(save1!=null);
-		OIS1.close();
-		
-	} catch (Exception e) {
-		System.out.println(e);
+	public void setData() {
+
+		// try (ObjectInputStream OIS1 = new ObjectInputStream(new FileInputStream("save2"))) {
+		// 	while(true) {
+		// 		char ch;
+		// 		try {
+		// 			ch = OIS1.readChar();
+		// 			System.out.print(ch);
+		// 		} catch (EOFException e) {
+		// 			System.out.println("");
+		// 			System.out.println("End of file reached");
+		// 			break;
+		// 		} 
+		// 	}
+		// } catch (IOException e) {
+		// 	// TODO Auto-generated catch block
+		// 	e.printStackTrace();
+		// }
+
+		try {
+            FileReader reader = new FileReader("save2.txt");
+            int character;
+ 
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            reader.close();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 	}
-	
-}
-	
 
 	public LoginPage() {
 		WindowUtilities.setNativeLookAndFeel();
 		setPreferredSize(new Dimension(796, 572));
 
 		setData();
-
 
 		PFlightTypes.setBackground(Color.white);
 		PLogin.setBackground(Color.white);
@@ -148,7 +178,6 @@ public class LoginPage extends JFrame {
 		JSP3.setBounds(0, 340, 790, 200);
 		JSP4.setBounds(0, 340, 790, 200);
 		JSP5.setBounds(0, 340, 790, 200);
-
 
 		Border blackline1 = BorderFactory.createTitledBorder("Domestic  - Economic");
 		JSP1.setBorder(blackline1);
@@ -178,7 +207,7 @@ public class LoginPage extends JFrame {
 		BLogin.setBounds(150, 240, 100, 25);
 
 		LDomesticFlight1.setBounds(60, 140, 138, 20);
-		LInternationalFlight1.setBounds(60, 150, 153, 20);
+		LInternationalFlight1.setBounds(60, 170, 153, 20);
 
 		PLogin.add(LUserName);
 		PLogin.add(TFUserName);
@@ -195,13 +224,11 @@ public class LoginPage extends JFrame {
 		PFlightDetails.add(JSP4);
 		PFlightDetails.add(JSP5);
 
-
 		JSP1.setVisible(true);
 		JSP2.setVisible(false);
 		JSP3.setVisible(false);
 		JSP4.setVisible(false);
 		JSP5.setVisible(false);
-
 
 		appname.setBounds(57, 0, 300, 150);
 
@@ -278,7 +305,6 @@ public class LoginPage extends JFrame {
 	}
 }
 
-
 class button1 implements ActionListener {
 	LoginPage type;
 	char[] cCheck, cPassword = { 'a', 'd', 'm', 'i', 'n', '\0' };
@@ -333,7 +359,13 @@ class mouse0 extends MouseAdapter {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		
+
+		type.JSP1.setVisible(false);
+		type.JSP2.setVisible(false);
+		type.JSP3.setVisible(false);
+		type.JSP4.setVisible(false);
+		type.JSP5.setVisible(true);
+
 		if (bCheck) {
 			type.Historybtn.setVisible(true);
 			type.bCheck = true;
@@ -342,6 +374,7 @@ class mouse0 extends MouseAdapter {
 			type.bCheck = false;
 		}
 
+		System.out.println(1);
 		type.LDomesticFlight.setVisible(true);
 		type.LInternationalFlight.setVisible(true);
 		type.LDomesticFlight0.setVisible(false);
@@ -357,10 +390,10 @@ class mouse0 extends MouseAdapter {
 		type.JSP3.setVisible(false);
 		type.JSP4.setVisible(false);
 		type.JSP5.setVisible(true);
-		
+
 		type.Historybtn.setVisible(false);
 		type.Historybtn1.setVisible(true);
-		
+
 	}
 }
 
@@ -449,7 +482,6 @@ class mouse2 extends MouseAdapter {
 		type.LBusiness1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	}
 
-	
 	public void mouseClicked(MouseEvent e) {
 		type.Historybtn1.setVisible(false);
 		type.Historybtn.setVisible(true);
@@ -467,6 +499,8 @@ class mouse2 extends MouseAdapter {
 				type.JSP2.setVisible(false);
 				type.JSP3.setVisible(true);
 				type.JSP4.setVisible(false);
+				type.JSP5.setVisible(false);
+
 			} else {
 				type.LDomesticFlight.setVisible(false);
 				type.LInternationalFlight.setVisible(true);
@@ -480,6 +514,7 @@ class mouse2 extends MouseAdapter {
 				type.JSP2.setVisible(false);
 				type.JSP3.setVisible(false);
 				type.JSP4.setVisible(false);
+				type.JSP5.setVisible(false);
 			}
 		} else {
 			if (bCheck) {
@@ -495,6 +530,7 @@ class mouse2 extends MouseAdapter {
 				type.JSP2.setVisible(false);
 				type.JSP3.setVisible(false);
 				type.JSP4.setVisible(true);
+				type.JSP5.setVisible(false);
 			} else {
 				type.LDomesticFlight.setVisible(true);
 				type.LInternationalFlight.setVisible(false);
@@ -508,6 +544,7 @@ class mouse2 extends MouseAdapter {
 				type.JSP2.setVisible(true);
 				type.JSP3.setVisible(false);
 				type.JSP4.setVisible(false);
+				type.JSP5.setVisible(false);
 			}
 		}
 	}
