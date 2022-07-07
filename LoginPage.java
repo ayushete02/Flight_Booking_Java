@@ -96,7 +96,7 @@ public class LoginPage extends JFrame {
 	// 	System.out.println(e);
 	// }
 
-	final Object[][] row5 = { { "Nagpur", "Bali", "64455", "06:20", "Bali", "64455", "06:20", "Bali", "64455"} };
+	final Object[][] row5 = { { "Nagpur", "Bali", "Economic", "06:20", "2", "1", "0", "", "6455"}, { "Nagpur", "Bangkok", "Economic", "08:30", "5", "0", "0", "12455"}, { "Nagpur", "London", "Business", "09:22", "3", "3", "0", "20455"}, { "Nagpur", "Dubai", "Economic", "06:50", "5", "1", "0", "", "116455"}, { "Nagpur", "Bali", "Economic", "09:20", "2", "1", "0", "", "6455"}, { "Nagpur", "Delhi", "Business", "12:20", "2", "1", "0", "", "15455"}, { "Nagpur", "Mumbi", "Economic", "06:10", "2", "1", "0", "", "8655"} };
 
 	JTable TDomesticFlight = new JTable(row1, col1);
 	JTable TInternationalFlight = new JTable(row2, col2);
